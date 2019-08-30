@@ -1,0 +1,2 @@
+# WizSchool
+wizschool app clone
