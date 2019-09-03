@@ -23,6 +23,8 @@
 		1F10E2BA23196054005955EE /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10E2B923196054005955EE /* AvatarView.swift */; };
 		1F10E2C0231AF456005955EE /* RankingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10E2BF231AF456005955EE /* RankingCollectionViewCell.swift */; };
 		1F10E2C4231AF6B2005955EE /* RankingUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10E2C3231AF6B2005955EE /* RankingUI.swift */; };
+		1F10E2C9231EAB97005955EE /* BookMarkFirstCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10E2C8231EAB97005955EE /* BookMarkFirstCell.swift */; };
+		1F10E2CB231EAC99005955EE /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10E2CA231EAC99005955EE /* Singleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		1F10E2B923196054005955EE /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		1F10E2BF231AF456005955EE /* RankingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingCollectionViewCell.swift; sourceTree = "<group>"; };
 		1F10E2C3231AF6B2005955EE /* RankingUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingUI.swift; sourceTree = "<group>"; };
+		1F10E2C8231EAB97005955EE /* BookMarkFirstCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkFirstCell.swift; sourceTree = "<group>"; };
+		1F10E2CA231EAC99005955EE /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +82,10 @@
 			children = (
 				1F10E29423191B53005955EE /* AppDelegate.swift */,
 				1F10E2A623191BBE005955EE /* TabBarController.swift */,
+				1F10E2CA231EAC99005955EE /* Singleton.swift */,
 				1F10E2C1231AF463005955EE /* Main */,
 				1F10E2C2231AF49F005955EE /* Ranking */,
-				1F10E2AA23191C5B005955EE /* BookMarkViewController.swift */,
+				1F10E2C5231EAB2F005955EE /* BookMark */,
 				1F10E2A923191C5B005955EE /* MyInfoViewController.swift */,
 				1F10E29823191B53005955EE /* Main.storyboard */,
 				1F10E29B23191B54005955EE /* Assets.xcassets */,
@@ -127,6 +132,15 @@
 				1F10E2C3231AF6B2005955EE /* RankingUI.swift */,
 			);
 			path = Ranking;
+			sourceTree = "<group>";
+		};
+		1F10E2C5231EAB2F005955EE /* BookMark */ = {
+			isa = PBXGroup;
+			children = (
+				1F10E2AA23191C5B005955EE /* BookMarkViewController.swift */,
+				1F10E2C8231EAB97005955EE /* BookMarkFirstCell.swift */,
+			);
+			path = BookMark;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +216,7 @@
 			files = (
 				1F10E2AF23192631005955EE /* TopCollectionViewCell.swift in Sources */,
 				1F10E29723191B53005955EE /* MainViewController.swift in Sources */,
+				1F10E2C9231EAB97005955EE /* BookMarkFirstCell.swift in Sources */,
 				1F10E2A723191BBE005955EE /* TabBarController.swift in Sources */,
 				1F10E2B1231938B8005955EE /* Metric.swift in Sources */,
 				1F10E2BA23196054005955EE /* AvatarView.swift in Sources */,
@@ -212,6 +227,7 @@
 				1F10E2AD23191C5B005955EE /* MyInfoViewController.swift in Sources */,
 				1F10E2AB23191C5B005955EE /* RankingViewController.swift in Sources */,
 				1F10E2B723195668005955EE /* GameCollectionViewCellofCell.swift in Sources */,
+				1F10E2CB231EAC99005955EE /* Singleton.swift in Sources */,
 				1F10E2C0231AF456005955EE /* RankingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
