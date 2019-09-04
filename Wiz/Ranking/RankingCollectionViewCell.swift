@@ -24,7 +24,7 @@ class RankingCollectionViewCell: UICollectionViewCell {
         
         let padding: CGFloat = 10
         let width:CGFloat = self.frame.width / 5
-        let height:CGFloat = self.frame.height / 2.2
+        let height:CGFloat = self.frame.height / 2
 
         self.addSubview(titleLabel)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false

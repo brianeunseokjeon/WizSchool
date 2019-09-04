@@ -23,13 +23,11 @@ class RankingUI: UIButton {
         avatarImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         avatarImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         avatarImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        let height = avatarImageView.heightAnchor.constraint(greaterThanOrEqualToConstant: 90)
-        height.priority = .init(500)
-        height.isActive = true
+        avatarImageView.heightAnchor.constraint(equalToConstant: 90).isActive = true
         
         self.addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor,constant: 10).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor).isActive = true
         nameLabel.centerXAnchor.constraint(equalTo: avatarImageView.centerXAnchor).isActive = true
         nameLabel.text = "KHL"
         

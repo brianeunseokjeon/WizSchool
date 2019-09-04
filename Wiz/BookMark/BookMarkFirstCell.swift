@@ -17,7 +17,7 @@ class BookMarkFirstCell: UICollectionViewCell {
         let layout = UICollectionViewFlowLayout()
         userCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         userCollectionView.backgroundColor = .white
-        layout.scrollDirection = .vertical
+        layout.scrollDirection = .horizontal
         
         self.addSubview(userCollectionView)
         userCollectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -40,18 +40,25 @@ class BookMarkFirstCell: UICollectionViewCell {
 
 extension BookMarkFirstCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return singleton.user.count
+        return 3
     }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "user", for: indexPath)
-        
+//        cell.backgroundColor = .yellow
         return cell
     }
     
     
 }
 
+
 extension BookMarkFirstCell: UICollectionViewDelegateFlowLayout {
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width - 50 / 5
+        let height = collectionView.frame.height
+        return CGSize(width: width, height: height)
+    }
 }
