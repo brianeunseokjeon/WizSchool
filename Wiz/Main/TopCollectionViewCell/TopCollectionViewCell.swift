@@ -10,7 +10,7 @@ import UIKit
 
 class TopCollectionViewCell: UICollectionViewCell {
     var topcollectionView :UICollectionView!
-    var total = 3
+    var total = 10
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,7 +27,7 @@ class TopCollectionViewCell: UICollectionViewCell {
         topcollectionView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
         topcollectionView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor).isActive = true
         topcollectionView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        
+        topcollectionView.showsHorizontalScrollIndicator = false
         topcollectionView.dataSource = self
         topcollectionView.delegate = self
         topcollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "top")
@@ -50,7 +50,7 @@ extension TopCollectionViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "top", for: indexPath)
-        cell.backgroundColor = .blue
+//        cell.backgroundColor = .blue
         cell.layer.cornerRadius = 10
         return cell
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 class BookMarkViewController: UIViewController {
-
+    
     var bookMarkCollectionView: UICollectionView!
     var haveItem = 5
     
@@ -30,40 +30,38 @@ class BookMarkViewController: UIViewController {
         
         bookMarkCollectionView.dataSource = self
         bookMarkCollectionView.delegate = self
-//        bookMarkCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "bookMark")
+        bookMarkCollectionView.register(BookMarkGameCell.self, forCellWithReuseIdentifier: "games")
         bookMarkCollectionView.register(BookMarkFirstCell.self, forCellWithReuseIdentifier: "bookMarkFirstCell")
-
+        
     }
     
-
+    
 }
 extension BookMarkViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
-    enum Partition {
+    
+    
+    enum Part {
         case users
         case games
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var partition: Part = Part.users
         
-        if let partition = Partition.init(rawValue: indexPath.row) {
-            print("ㅎㅎㅎ",indexPath.row)
-
-            switch partition {
-            case .유저:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookMarkFirstCell", for: indexPath) as! BookMarkFirstCell
-                cell.backgroundColor = .green
-                return cell
-            default:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookMark", for: indexPath)
-                cell.backgroundColor = .blue
-                return cell
-            }
+        if indexPath.row == 0 {
+            partition = Part.users
         } else {
-            print("else로 빠진후",indexPath.row)
+            partition = Part.games
+        }
+        
+        switch partition {
+        case .users:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookMarkFirstCell", for: indexPath) as! BookMarkFirstCell
-            cell.backgroundColor = .gray
+            return cell
+        case .games:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "games", for: indexPath) as! BookMarkGameCell
             return cell
         }
     }
