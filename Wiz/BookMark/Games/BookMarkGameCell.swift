@@ -52,7 +52,7 @@ class BookMarkGameCell: UICollectionViewCell {
         avatarView.leadingAnchor.constraint(equalTo: gameImage.trailingAnchor, constant: 20).isActive = true
         avatarView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
 
-        avatarView.heightAnchor.constraint(equalToConstant: self.frame.height/3.6).isActive = true
+        avatarView.heightAnchor.constraint(equalToConstant: self.frame.height/6).isActive = true
         
         partitionView.leadingAnchor.constraint(equalTo: gameImage.trailingAnchor, constant: 20).isActive = true
         partitionView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5).isActive = true
@@ -66,7 +66,7 @@ class BookMarkGameCell: UICollectionViewCell {
         bottomLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         bottomLabel.textColor = #colorLiteral(red: 0.1229970381, green: 0.8766855597, blue: 0.7636540532, alpha: 1)
         
-        avatarView.settingAvatar(image: "user1", name: "크리수")
+        avatarView.settingAvatar(image: "user1", name: "크리스")
     }
     func settingUI(gameImage:String,gameTitle:String,
                    avatarImage:String,avatarName:String) {

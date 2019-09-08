@@ -9,7 +9,7 @@
 import Foundation
 
 struct User {
-    let name: String
+    let avatarName: String
     let avatarImage: String
     let game: [Game]
 }
@@ -17,14 +17,32 @@ struct User {
 struct Game {
     let gameImage: String
     let gameTitle: String
-    let avatarName: String
-    let avatarImage: String
+}
+struct MainTopCell {
+    let image: String
+    let title: String
 }
 
 class InfoSingleton {
     static let standard = InfoSingleton()
     private init(){}
-    var user = [User(name: "크리스",avatarImage: "user1", game: [Game(gameImage: "sea", gameTitle: "바다로1", avatarName: "크리스", avatarImage: "user1"),Game(gameImage: "sea", gameTitle: "구랭구랭바다", avatarName: "구랭1", avatarImage: "user1"),Game(gameImage: "sea", gameTitle: "gogoSea", avatarName: "씨씨고씨", avatarImage: "user1")]),User(name: "두번째",avatarImage: "user1", game: [Game(gameImage: "sea", gameTitle: "바다로2", avatarName: "크리스", avatarImage: "user1")]),User(name: "세번째",avatarImage: "user1", game: [Game(gameImage: "sea", gameTitle: "바다로3", avatarName: "크리스", avatarImage: "user1"),Game(gameImage: "sea", gameTitle: "구랭구랭바다", avatarName: "구랭2", avatarImage: "character"),Game(gameImage: "sea", gameTitle: "gogoSea", avatarName: "구랭22", avatarImage: "user1")]),User(name: "네번째",avatarImage: "user1", game: [Game(gameImage: "sea", gameTitle: "구랭구랭바다", avatarName: "구랭3", avatarImage: "user1"),Game(gameImage: "sea", gameTitle: "gogoSea", avatarName: "씨씨고씨네번째", avatarImage: "user1")]),User(name: "", avatarImage: "add", game: [Game(gameImage: "", gameTitle: "", avatarName: "", avatarImage: "")])]
+    var user = [
+        User(avatarName: "크리스",avatarImage: "user1",
+             game: [Game(gameImage: "sea", gameTitle: "바다로1"),
+                    Game(gameImage: "sea", gameTitle: "구랭구랭바다"),
+                    Game(gameImage: "sea", gameTitle: "gogoSea")]),
+        User(avatarName: "부링",avatarImage: "user2",
+             game: [Game(gameImage: "sea", gameTitle: "바다로2")]),
+        User(avatarName: "자자",avatarImage: "user3",
+             game: [Game(gameImage: "sea", gameTitle: "바다로3"),
+                    Game(gameImage:"sea",gameTitle:"구랭구랭바다"),
+                    Game(gameImage: "sea", gameTitle: "gogoSea")]),
+        User(avatarName: "비물디",avatarImage: "user4",
+             game: [Game(gameImage: "sea", gameTitle: "구랭구랭바다"),
+                    Game(gameImage: "sea", gameTitle: "gogoSea")]),
+        User(avatarName: "", avatarImage: "add",
+             game: [Game(gameImage: "", gameTitle: "")])
+    ]
 }
 
 var singleton = InfoSingleton.standard

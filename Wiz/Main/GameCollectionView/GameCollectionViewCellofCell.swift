@@ -38,7 +38,7 @@ class GameCollectionViewCellofCell: UICollectionViewCell {
         avatarView.bottomAnchor.constraint(equalTo: self.bottomAnchor,constant: -5).isActive = true
         avatarView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         avatarView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        avatarView.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        avatarView.heightAnchor.constraint(equalToConstant: self.frame.height/6).isActive = true
         
         setting(title: "GoGoSea",gameImage: "sea" ,Userimage: "character", id: "너구리")
        

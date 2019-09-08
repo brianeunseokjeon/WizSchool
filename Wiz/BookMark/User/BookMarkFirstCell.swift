@@ -29,6 +29,7 @@ class BookMarkFirstCell: UICollectionViewCell {
         userCollectionView.dataSource = self
         userCollectionView.delegate = self
         userCollectionView.register(BookMarkUserOfFirstCell.self, forCellWithReuseIdentifier: "user")
+        userCollectionView.showsHorizontalScrollIndicator = false
         
         
         self.addSubview(partitionView)
@@ -55,7 +56,8 @@ extension BookMarkFirstCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "user", for: indexPath) as! BookMarkUserOfFirstCell
         let userInfo = singleton.user[indexPath.row]
-        cell.setting(userImage: userInfo.avatarImage, userName: userInfo.name, indexPath: indexPath.row)
+        cell.setting(userImage: userInfo.avatarImage, userName: userInfo.avatarName, indexPath: indexPath.row)
+     
         return cell
     }
     

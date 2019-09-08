@@ -27,7 +27,6 @@ class BookMarkUserOfFirstCell: UICollectionViewCell {
     userImageView.heightAnchor.constraint(equalToConstant: self.frame.width).isActive = true
     userImageView.layer.masksToBounds = true
     userImageView.layer.cornerRadius = userImageView.frame.width / 2
-    userImageView.image = UIImage(named: "user1")
     
     self.addSubview(userNameLabel)
     userNameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +34,6 @@ class BookMarkUserOfFirstCell: UICollectionViewCell {
     userNameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
     userNameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
     userNameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-    userNameLabel.text = "크리스"
     userNameLabel.textAlignment = .center
     userNameLabel.font = UIFont.systemFont(ofSize: 13, weight: .ultraLight)
     

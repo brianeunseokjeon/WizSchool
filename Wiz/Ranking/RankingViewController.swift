@@ -44,7 +44,7 @@ extension RankingViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ranking", for: indexPath) as! RankingCollectionViewCell
-       
+        cell.setting(indexPathRow: indexPath.row)
         cell.backgroundColor = .white
         return cell
         

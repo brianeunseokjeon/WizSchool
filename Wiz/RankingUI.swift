@@ -13,38 +13,49 @@ class RankingUI: UIButton {
     let nameLabel = UILabel()
     let numberOfLikeView = AvatarView()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    // 이때 시점이 superview 레이아웃 잡힘 ㅠㅠ
+    override func layoutSubviews() {
+        super.layoutSubviews()
         setupUI()
     }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+ 
     private func setupUI() {
+        guard let superView = superview as? RankingCollectionViewCell else {return print("가드문 오류")}
+        
+        let nameLabelHeight = superView.frame.height / 10
+        let avatarImageViewHeight = superView.frame.width / 5
+        let numberOfLikeViewHeight = superView.frame.height / 12
         self.addSubview(avatarImageView)
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         avatarImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         avatarImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         avatarImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        avatarImageView.heightAnchor.constraint(equalToConstant: 90).isActive = true
+        avatarImageView.heightAnchor.constraint(equalToConstant: avatarImageViewHeight).isActive = true
         
         self.addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor).isActive = true
+        nameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor,constant: 5).isActive = true
         nameLabel.centerXAnchor.constraint(equalTo: avatarImageView.centerXAnchor).isActive = true
-        nameLabel.text = "KHL"
-        
-        nameLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        nameLabel.heightAnchor.constraint(equalToConstant: nameLabelHeight).isActive = true
+        nameLabel.widthAnchor.constraint(equalToConstant: avatarImageViewHeight).isActive = true
+        nameLabel.textAlignment = .center
+
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 18)
         
 
         self.addSubview(numberOfLikeView)
         numberOfLikeView.translatesAutoresizingMaskIntoConstraints = false
-        numberOfLikeView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 3).isActive = true
         numberOfLikeView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         numberOfLikeView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        numberOfLikeView.heightAnchor.constraint(equalToConstant: numberOfLikeViewHeight).isActive = true
         numberOfLikeView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
 
     }
     
     func setting(avatarImage:String,name:String,heartNumber:String) {
-        print("RankingUIWidth",self.frame.width)
         avatarImageView.image = UIImage(named: avatarImage)
          nameLabel.text = name
         nameLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)

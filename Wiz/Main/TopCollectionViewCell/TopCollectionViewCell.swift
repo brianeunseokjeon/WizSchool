@@ -10,7 +10,7 @@ import UIKit
 
 class TopCollectionViewCell: UICollectionViewCell {
     var topcollectionView :UICollectionView!
-    var total = 10
+    var total = 3
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,7 +30,7 @@ class TopCollectionViewCell: UICollectionViewCell {
         topcollectionView.showsHorizontalScrollIndicator = false
         topcollectionView.dataSource = self
         topcollectionView.delegate = self
-        topcollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "top")
+        topcollectionView.register(TopCollectionViewCellOfCell.self, forCellWithReuseIdentifier: "top")
         
     }
     
@@ -49,9 +49,8 @@ extension TopCollectionViewCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "top", for: indexPath)
-//        cell.backgroundColor = .blue
-        cell.layer.cornerRadius = 10
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "top", for: indexPath) as! TopCollectionViewCellOfCell
+        cell.settingUI(indexPathRow: indexPath.row)
         return cell
     }
     
@@ -74,7 +73,28 @@ extension TopCollectionViewCell: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width.rounded(.down), height: height.rounded(.down))
     }
     
-    
-    
+    enum Index:Int {
+        case startVideoSite = 0
+        case blog
+        case youTube
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let indexPathRow = Index.init(rawValue: indexPath.row) else {return}
+        switch indexPathRow{
+        case .startVideoSite:
+            if let url = URL(string: "https://wizschool.io/#/classBasic/1") {
+                UIApplication.shared.open(url, options: [:])
+            }
+        case .blog:
+            if let url = URL(string: "https://m.blog.naver.com/PostList.nhn?permalink=permalink&blogId=wizschool_inc&proxyReferer=&proxyReferer=https:%2F%2Fblog.naver.com%2Fwizschool_inc") {
+                UIApplication.shared.open(url, options: [:])
+            }
+        case .youTube:
+                if let url = URL(string:"https://www.youtube.com/channel/UC8copJ0_PZWEVQ1GK9LwPpQ" ) {
+                UIApplication.shared.open(url, options: [:])
+            }
+        }
+        
+    }
     
 }
